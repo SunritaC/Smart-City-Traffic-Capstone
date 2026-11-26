@@ -1,3 +1,4 @@
+-- Rebuild steps are in the Part 1 README. Run this query after importing.
 
 /*Verify the data load by checking the distinct records and max and min values from the source file*/
 /* 1.1 Load the data Set */
