@@ -1,0 +1,41 @@
+2026-11-27 16:27:27,746 | INFO | __main__ | Command invoked: {'debug': False, 'data': PosixPath('data/processed/Metro_Interstate_Clean.csv'), 'log': PosixPath('pipeline.log'), 'command': 'build', 'csv': PosixPath('/content/Metro_Interstate_Traffic_Volume.csv')}
+2026-11-27 16:27:27,852 | INFO | pipeline | Loaded 48204 rows and 9 columns from /content/Metro_Interstate_Traffic_Volume.csv
+2026-11-27 16:27:27,853 | INFO | pipeline | Validated all nine required columns
+2026-11-27 16:27:27,948 | INFO | pipeline | Standardised 0 rows | holiday
+2026-11-27 16:27:28,010 | INFO | pipeline | Standardised 0 rows | weather_main
+2026-11-27 16:27:28,096 | WARNING | pipeline | Standardised 1730 rows | weather_description
+2026-11-27 16:27:28,410 | INFO | pipeline | Dropped 0 rows | invalid or non-hourly timestamps
+2026-11-27 16:27:28,442 | INFO | pipeline | Parsed 48204 hourly timestamps
+2026-11-27 16:27:28,465 | INFO | pipeline | Marked missing 0 rows | non-numeric temp
+2026-11-27 16:27:28,494 | INFO | pipeline | Marked missing 0 rows | non-numeric rain_1h
+2026-11-27 16:27:28,524 | INFO | pipeline | Marked missing 0 rows | non-numeric snow_1h
+2026-11-27 16:27:28,573 | INFO | pipeline | Marked missing 0 rows | non-numeric clouds_all
+2026-11-27 16:27:28,606 | INFO | pipeline | Marked missing 0 rows | non-numeric traffic_volume
+2026-11-27 16:27:28,655 | WARNING | pipeline | Dropped 17 rows | exact duplicates after standardisation
+2026-11-27 16:27:28,713 | WARNING | pipeline | Collapsed 7612 rows | additional rows sharing a timestamp
+2026-11-27 16:27:29,182 | INFO | pipeline | SQLite reconciliation passed for 40575 hourly records
+2026-11-27 16:27:29,516 | INFO | pipeline | Saved Part 1 baseline to data/processed/traffic_hourly_baseline.csv
+2026-11-27 16:27:29,525 | WARNING | pipeline | Detected 10 rows | invalid or missing temp
+2026-11-27 16:27:29,528 | WARNING | pipeline | Imputed 4 rows | temp using the 2014-01 median
+2026-11-27 16:27:29,530 | WARNING | pipeline | Imputed 6 rows | temp using the 2014-02 median
+2026-11-27 16:27:29,532 | WARNING | pipeline | Detected 1 rows | invalid or missing rain_1h
+2026-11-27 16:27:29,534 | WARNING | pipeline | Imputed 1 rows | rain_1h using the 2016-07 median
+2026-11-27 16:27:29,537 | INFO | pipeline | Detected 0 rows | invalid or missing snow_1h
+2026-11-27 16:27:29,540 | INFO | pipeline | Detected 0 rows | invalid or missing clouds_all
+2026-11-27 16:27:29,542 | WARNING | pipeline | Detected 2 rows | invalid or missing traffic_volume
+2026-11-27 16:27:29,544 | WARNING | pipeline | Imputed 2 rows | traffic_volume using the 2016-07 median
+2026-11-27 16:27:29,557 | WARNING | pipeline | Updated 1150 rows | holiday labels across observed hours on flagged dates
+2026-11-27 16:27:29,558 | INFO | pipeline | Cleaned 40575 unique hours; 53 flagged dates
+2026-11-27 16:27:29,568 | INFO | feature_engineering | Before features: 40575 rows, 10 columns
+2026-11-27 16:27:29,644 | INFO | feature_engineering | After features: 40575 rows, 37 columns
+2026-11-27 16:27:30,816 | INFO | __main__ | Saved feature dataset to data/processed/Metro_Interstate_Clean.csv
+2026-11-27 16:27:31,521 | INFO | visualizations | Saved figure: figures/01_hourly_demand.png
+2026-11-27 16:27:31,728 | INFO | visualizations | Saved figure: figures/02_weekday_weekend.png
+2026-11-27 16:27:32,253 | INFO | visualizations | Saved figure: figures/03_temperature_traffic.png
+2026-11-27 16:27:32,440 | INFO | visualizations | Saved figure: figures/04_weather_traffic.png
+2026-11-27 16:27:33,388 | INFO | __main__ | Command invoked: {'debug': False, 'data': PosixPath('data/processed/Metro_Interstate_Clean.csv'), 'log': PosixPath('pipeline.log'), 'command': 'query', 'timestamp': '2017-01-02 16:00'}
+2026-11-27 16:27:34,633 | INFO | __main__ | Command invoked: {'debug': False, 'data': PosixPath('data/processed/Metro_Interstate_Clean.csv'), 'log': PosixPath('pipeline.log'), 'command': 'peak', 'day_type': 'weekday', 'top': 3}
+2026-11-27 16:27:35,667 | INFO | __main__ | Command invoked: {'debug': False, 'data': PosixPath('data/processed/Metro_Interstate_Clean.csv'), 'log': PosixPath('pipeline.log'), 'command': 'compare'}
+2026-11-27 16:27:36,921 | INFO | __main__ | Command invoked: {'debug': False, 'data': PosixPath('data/processed/Metro_Interstate_Clean.csv'), 'log': PosixPath('pipeline.log'), 'command': 'recommend', 'day_type': 'weekday', 'start': 7, 'end': 19, 'weather': None}
+2026-11-27 16:27:38,204 | INFO | __main__ | Command invoked: {'debug': False, 'data': PosixPath('data/processed/Metro_Interstate_Clean.csv'), 'log': PosixPath('pipeline.log'), 'command': 'query', 'timestamp': 'invalid-date'}
+2026-11-27 16:27:38,542 | ERROR | __main__ | query failed: Use YYYY-MM-DD HH:MM for the timestamp
